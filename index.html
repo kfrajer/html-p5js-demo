@@ -2,22 +2,42 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
     <script>
-      
       const bgcolor=255;
-   
+      let rectFillColor;
+      let rectStrokeColor;
       function setup() {
-        let can=createCanvas(640, 480);
-        can.parent("main-sketch");
+      let can=createCanvas(640, 480);
+      can.parent("main-sketch");
 
-        background(bgcolor);
+      rectFillColor=color(255,0,0);
+      rectStrokeColor=color(50);
+      
+      background(bgcolor);
+      rectMode(CENTER);
+
+      fill(rectFillColor);      
+      stroke(rectStrokeColor);
       }
 
       function draw() {
-        fill(mouseIsPressed==true ? 0 : 255);
-        ellipse(mouseX, mouseY, 80, 80);
+      //fill(mouseIsPressed==true ? 0 : 255);
+      //ellipse(mouseX, mouseY, 80, 80);
+      drawRectangles();
       }
       function mouseReleased(){
-        background(bgcolor);
+      background(bgcolor);
+      updateParameters();
+      }
+
+      function drawRectangles(){
+      strokeWeight(4);
+      rect(width/2,height/2,width/2,height/2);
+      strokeWeight(2);
+      
+      }
+
+      function updateRectangles(){
+      
       }
     </script>
   </head>
