@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <script>
+      
+      const bgcolor=255;
+   
+      function setup() {
+        let can=createCanvas(640, 480);
+        can.parent("main-sketch");
+
+        background(bgcolor);
+      }
+
+      function draw() {
+        fill(mouseIsPressed==true ? 0 : 255);
+        ellipse(mouseX, mouseY, 80, 80);
+      }
+      function mouseReleased(){
+        background(bgcolor);
+      }
+    </script>
+  </head>
+  <body style = "background-color: #c8c8c8;">
+    <div style="position: fixed;
+		left: 50%;
+		transform: translate(-50%, -0%);">
+      <h1 align="center">Rectangle equal-size fragmentation</h1>
+      <h2 align="center">A demonstration</h2>
+    </div>
+    
+    <div style="position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);">
+      <div id="main-sketch">
+      </div>
+    </div>
+    
+  </body>
+</html>
